@@ -10,14 +10,18 @@
     <div class="video-background">
         <video autoplay muted loop id="video-bg">
             <source src="video/videoAP.mp4" type="video/mp4">
-           </video>
-        <div class="container">
-            <h1>Previsão do Tempo</h1>
+        </video>
+    </div>
+    <div class="container">
+        <h1>Previsão do Tempo</h1>
+        <div class="search-wrapper">
             <input type="text" id="cityInput" placeholder="Digite o nome da cidade">
             <button onclick="getWeather()">Obter Previsão</button>
-            <div id="weatherData"></div>
+            <span id="locationIcon" class="location-icon">&#x1F4CD;</span> <!-- Ícone de localização -->
         </div>
+        <div id="weatherData"></div>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

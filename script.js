@@ -35,7 +35,15 @@ function showWeather(position) {
         .then(data => {
             const cityName = data[0].name;
             const countryCode = data[0].country;
-            
+            const searchCity = document.getElementById('cityInput').value.trim().toLowerCase();
+            const locationIcon = document.getElementById('locationIcon');
+
+            if (searchCity === cityName.toLowerCase()) {
+                locationIcon.style.display = 'inline'; // Mostra o ícone de localização
+            } else {
+                locationIcon.style.display = 'none'; // Oculta o ícone de localização
+            }
+
             // Chamada para a API de previsão do tempo usando o nome da cidade e código do país
             const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&appid=b72a609c2ff4cea1bbee3d0352798eb4&units=metric`;
             
@@ -67,4 +75,3 @@ function displayWeather(weatherData) {
 
 // Chamando a função para obter a localização do usuário ao carregar a página
 getLocation();
-
