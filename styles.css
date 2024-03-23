@@ -1,0 +1,88 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative; /* Adicionado */
+    z-index: 1; /* Adicionado */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#weatherData {
+    margin-top: 20px;
+}
+
+/* Estilos para o vídeo de fundo */
+.video-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+/* Estilos para telas menores */
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    input[type="text"] {
+        width: 80%;
+        margin-right: 0;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+}
+
+/* Outras media queries e estilos para tamanhos de tela maiores podem ser adicionados aqui */
+
+
