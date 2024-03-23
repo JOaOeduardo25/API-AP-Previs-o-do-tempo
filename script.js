@@ -1,7 +1,7 @@
 function getWeather() {
     const city = document.getElementById('cityInput').value;
     const apiKey = 'b72a609c2ff4cea1bbee3d0352798eb4';
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     fetch(url)
     .then(response => response.json())
@@ -28,7 +28,7 @@ function showWeather(position) {
     const longitude = position.coords.longitude;
 
     // Chamada para a API de geocodificação para obter o nome da cidade usando as coordenadas
-    const geocodeApiUrl = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid={API key}`;
+    const geocodeApiUrl = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=b72a609c2ff4cea1bbee3d0352798eb4`;
     
     fetch(geocodeApiUrl)
         .then(response => response.json())
@@ -37,7 +37,7 @@ function showWeather(position) {
             const countryCode = data[0].country;
             
             // Chamada para a API de previsão do tempo usando o nome da cidade e código do país
-            const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&appid={API key}&units=metric`;
+            const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&appid=b72a609c2ff4cea1bbee3d0352798eb4&units=metric`;
             
             fetch(weatherApiUrl)
                 .then(response => response.json())
@@ -67,3 +67,4 @@ function displayWeather(weatherData) {
 
 // Chamando a função para obter a localização do usuário ao carregar a página
 getLocation();
+
